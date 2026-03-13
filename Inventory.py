@@ -12,14 +12,18 @@ while saleStatus:
             price=float(input("Please, Enter the product value: "))
             break 
         except ValueError:
+            print()
             print("Error: Please enter a valid numeric value")
+            print()
 
     while validation:
         try:
-            quantity=int(input("Please, Enter the quantity of the product: "))
+            quantity=float(input("Please, Enter the quantity of the product: "))
             break 
         except ValueError:
+            print()
             print("Error: Please enter a valid numeric value")
+            print()
 
     sale=[name, price, quantity]
     sales.append(sale)
@@ -36,6 +40,8 @@ while saleStatus:
             print("--------------------------------")
             print("Invalid option, try again")
     addProducts=True
+
+print()
 print("--------------------------------")
 
 for sale in sales:  
