@@ -17,4 +17,4 @@ This application is a Python-based tool designed to manage a basic sales record.
   - The algorithm calculates the subtotal for each item by multiplying price and quantity.
   - The final output displays a summary of all processed transactions.
 
-![flow_chart.drawio.png](https://github.com/JayzirTech/User_Story_M1S1/blob/0c0be49f93abcdc2126fb3a87f2bb5fa30ac3bd4/flow_chart.drawio.png)
+> <div align="center"> <img src="https://github.com/JayzirTech/User_Story_M1S1/blob/0c0be49f93abcdc2126fb3a87f2bb5fa30ac3bd4/flow_chart.drawio.png" width="15%" alt="flow_chart"> </div>
