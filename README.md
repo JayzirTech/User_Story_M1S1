@@ -1,17 +1,20 @@
-# What does this program do?
+# Inventory Management System
+## Description
+This application is a Python-based tool designed to manage a basic sales record. It is a lightweight solution for users who need to calculate total sales and manage itemized lists within a terminal environment.
 
-## This is a Digital Sales Assistant designed to help you register and calculate purchases quickly and accurately. Here is how it works for you:
-- Step-by-Step Product Entry: The program guides you through adding items by asking for the product's name, its price, and the quantity you are buying.
-- Mistake-Proof Input: If you accidentally type letters or symbols when asked for a price or quantity, the program won't crash. It will simply notify you of the error and let you try again.
-- Flexible Shopping List: You can add as many different products as you want. After each item, the program asks if you'd like to continue or finish the list.
--Automatic Calculations: You don't need a calculator. The system automatically multiplies the price by the quantity for every item you enter.
-- Instant Final Report: Once you are done, it displays an organized summary of your entire "shopping cart," showing each product's details and the final total amount to pay.
+## How it works
+1. The program initializes an empty list to store multiple product entries.
+2. It requests the user to input the product name, unit price, and quantity.
+3. The system executes a validation loop to ensure that numeric inputs are handled without crashing the script.
+4. Each entry is appended to a global sales list as a nested data structure.
+5. Once the input phase is complete, the script iterates through the records to calculate subtotals and the total.
 
-Easy to Follow: It uses clear messages to welcome you and confirm when a product has been added correctly.
-
-## Summary of Benefits
-- Saves Time: Handles all the math for you.
-- Prevents Frustration: It is designed to handle typing errors gracefully.
-- Clear Records: Provides a neat list of everything you registered before closing.
+### Key Technical Features
+- Input Validation: Uses try-except blocks to catch ValueError during data entry.
+- Data Structures: Employs list nesting to organize product attributes (Name, Price, Quantity).
+- Logic Flow:
+  - The script collects user data through a series of interactive prompts.
+  - The algorithm calculates the subtotal for each item by multiplying price and quantity.
+  - The final output displays a summary of all processed transactions.
 
 ![flow_chart.drawio.png](https://github.com/JayzirTech/User_Story_M1S1/blob/0c0be49f93abcdc2126fb3a87f2bb5fa30ac3bd4/flow_chart.drawio.png)
