@@ -20,6 +20,11 @@ while saleStatus:   #Loop to add products to the sale
     while validation:   #Loop to validate the price and quantity inputs
         try:
             price=float(input("Please, Enter the product value: ")) #Enter the product price
+            if price<=0: 
+                print()
+                print("The price must be greater then zero")
+                print()
+                continue
             break 
         except ValueError:
             print()
@@ -28,10 +33,7 @@ while saleStatus:   #Loop to add products to the sale
 
     while validation:   #Loop to validate the price and quantity inputs
         try:
-            quantity=float(input("Please, Enter the quantity of the product: "))    #Enter the product quantity
-            if quantity<=0:
-                print("The quantity must be greater then zero")
-                continue
+            quantity=float(input("Please, Enter the quantity of the product: "))    #Enter the product quantity 
             break 
         except ValueError:
             print()
@@ -39,9 +41,20 @@ while saleStatus:   #Loop to add products to the sale
             print()
 
     print("product added successfully!")
+    print()
 
     sale=[name, price, quantity]    #Create a list with the product name, price and quantity
     sales.append(sale)  #Add the product to the sales list
+
+    print("Partial summary")
+    for sale in sales:  
+        number = sales.index(sale) + 1
+        subTotalSale=sale[1] * sale[2]
+        print(f"Product {number}: {sale[0]} | Value: ${sale[1]} | Quantity: {sale[2]} | Total: ${subTotalSale}")   #
+        totalSales= totalSales + subTotalSale
+    print(f"Subtotal: $ {totalSales}")
+
+    totalSales=0
     print()
 
     while addProducts:  
@@ -57,7 +70,7 @@ while saleStatus:   #Loop to add products to the sale
             print("Invalid option, try again, type (yes) or (no)")  #If the user enters an invalid option, it will ask again
     addProducts=True
 
-print()
+print("Total Sale")
 print("--------------------------------")
 
 #Print the products added to the sale and calculate the total sale
@@ -72,5 +85,4 @@ print(f"Total sale is: ${totalSales}")
 print("--------------------------------")
 print("Thank you for your purchase!")
 
-#qué pasa con los valores negativos (corregido. Solo pasa con la cantidad)
-#qué pasa si el usuario no ingresa nada en las opciones (Corregido)
+#qué pasa si se agregan dos productos con igual nombre 
