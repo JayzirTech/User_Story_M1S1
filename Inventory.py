@@ -12,8 +12,8 @@ print("Welcome to the inventory management system")  #Welcome message
 print("--------------------------------")
 while saleStatus:   #Loop to add products to the sale
     while input_validation:
-        name=input("Please, Enter the product name: ").lower()  #Enter the product name and converts everything to lowercase
-        if name.strip():    #Verify that the user has entered something
+        name=input("Please, Enter the product name: ").lower().strip()  #Enter the product name and converts everything to lowercase
+        if name:    #Verify that the user has entered something
             break
         else: print("Error! You must enter a product.") 
 
