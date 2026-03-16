@@ -12,7 +12,7 @@ print("Welcome to the inventory management system")  #Welcome message
 print("--------------------------------")
 while saleStatus:   #Loop to add products to the sale
     while input_validation:
-        name=input("Please, Enter the product name: ")  #Enter the product name
+        name=input("Please, Enter the product name: ").lower()  #Enter the product name
         if name:
             break
         else: print("Error! You must enter a product.")
@@ -40,11 +40,22 @@ while saleStatus:   #Loop to add products to the sale
             print("Error: Please enter a valid numeric value")
             print()
 
-    print("product added successfully!")
-    print()
-
     sale=[name, price, quantity]    #Create a list with the product name, price and quantity
-    sales.append(sale)  #Add the product to the sales list
+
+    #Verificar si el usuario está ingresando un produtcto que ya está registrado
+    fount=False
+    for i in range(len(sales)):
+        if sales[i][0] == name:
+            sales[i][2] += quantity
+            fount=True
+            print(f"Updated quantity")
+            print()
+            break
+
+    if not fount:
+        sales.append(sale)  #Add the product to the sales list 
+        print("product added successfully!")
+        print()    
 
     print("Partial summary")
     for sale in sales:  
