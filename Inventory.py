@@ -4,13 +4,19 @@ saleStatus=True
 addProducts=True
 totalSales=0
 validation=True
+input_validation=True
 
 # Program
 print()
 print("Welcome to the inventory management system")  #Welcome message
 print("--------------------------------")
 while saleStatus:   #Loop to add products to the sale
-    name=input("Please, Enter the product name: ")  #Enter the product name
+    while input_validation:
+        name=input("Please, Enter the product name: ")  #Enter the product name
+        if name:
+            break
+        else: print("Error! You must enter a product.")
+
     while validation:   #Loop to validate the price and quantity inputs
         try:
             price=float(input("Please, Enter the product value: ")) #Enter the product price
@@ -23,6 +29,9 @@ while saleStatus:   #Loop to add products to the sale
     while validation:   #Loop to validate the price and quantity inputs
         try:
             quantity=float(input("Please, Enter the quantity of the product: "))    #Enter the product quantity
+            if quantity<=0:
+                print("The quantity must be greater then zero")
+                continue
             break 
         except ValueError:
             print()
@@ -37,6 +46,7 @@ while saleStatus:   #Loop to add products to the sale
 
     while addProducts:  
         addProduct=input("Want add more product? (Yes) or (No): ").lower()  #Ask the user if they want to add more products to the sale
+        print()
         if addProduct == "yes":
             addProducts=False
         elif addProduct == "no":
@@ -44,7 +54,7 @@ while saleStatus:   #Loop to add products to the sale
             addProducts=False
         else:
             print("--------------------------------")
-            print("Invalid option, try again")  #If the user enters an invalid option, it will ask again
+            print("Invalid option, try again, type (yes) or (no)")  #If the user enters an invalid option, it will ask again
     addProducts=True
 
 print()
@@ -61,3 +71,6 @@ for sale in sales:
 print(f"Total sale is: ${totalSales}")
 print("--------------------------------")
 print("Thank you for your purchase!")
+
+#qué pasa con los valores negativos (corregido. Solo pasa con la cantidad)
+#qué pasa si el usuario no ingresa nada en las opciones (Corregido)
